@@ -1,0 +1,311 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SantaVerse OS Design System - Futuristic Christmas Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Core Christmas Palette */
+    --background: 220 25% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 25% 12%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 25% 14%;
+    --popover-foreground: 210 20% 95%;
+
+    /* Christmas Red - Primary */
+    --primary: 0 72% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Emerald Green - Secondary */
+    --secondary: 152 60% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted tones */
+    --muted: 220 20% 18%;
+    --muted-foreground: 215 15% 55%;
+
+    /* Gold Accent */
+    --accent: 42 90% 55%;
+    --accent-foreground: 220 25% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 18%;
+    --ring: 0 72% 50%;
+
+    --radius: 0.75rem;
+
+    /* Extended palette */
+    --christmas-red: 0 72% 50%;
+    --christmas-red-glow: 0 72% 60%;
+    --christmas-green: 152 60% 35%;
+    --christmas-green-glow: 152 60% 45%;
+    --christmas-gold: 42 90% 55%;
+    --christmas-gold-glow: 42 90% 65%;
+    --christmas-snow: 210 20% 98%;
+    --christmas-ice: 200 80% 85%;
+    
+    /* Glass effects */
+    --glass-bg: 220 25% 15% / 0.6;
+    --glass-border: 220 20% 30% / 0.3;
+    --glass-glow: 0 72% 50% / 0.15;
+    
+    /* Shadows */
+    --shadow-glow-red: 0 0 40px hsl(0 72% 50% / 0.3);
+    --shadow-glow-green: 0 0 40px hsl(152 60% 35% / 0.3);
+    --shadow-glow-gold: 0 0 40px hsl(42 90% 55% / 0.3);
+
+    /* Sidebar */
+    --sidebar-background: 220 25% 10%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 0 72% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 25% 18%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 0 72% 50%;
+  }
+
+  .light {
+    --background: 210 20% 98%;
+    --foreground: 220 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+
+    --primary: 0 72% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 152 55% 30%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 220 15% 40%;
+
+    --accent: 42 85% 50%;
+    --accent-foreground: 220 25% 10%;
+
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 88%;
+    --input: 210 20% 92%;
+    --ring: 0 72% 45%;
+
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 210 20% 80% / 0.5;
+    --glass-glow: 0 72% 45% / 0.1;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 25% 20%;
+    --sidebar-primary: 0 72% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 96%;
+    --sidebar-accent-foreground: 220 25% 10%;
+    --sidebar-border: 210 20% 90%;
+    --sidebar-ring: 0 72% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Glass Card Effect */
+  .glass-card {
+    @apply relative overflow-hidden rounded-xl border border-border/50;
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--christmas-red) / 0.05) 0%,
+      transparent 50%,
+      hsl(var(--christmas-green) / 0.05) 100%
+    );
+    pointer-events: none;
+  }
+
+  /* Glow effects */
+  .glow-red {
+    box-shadow: var(--shadow-glow-red);
+  }
+
+  .glow-green {
+    box-shadow: var(--shadow-glow-green);
+  }
+
+  .glow-gold {
+    box-shadow: var(--shadow-glow-gold);
+  }
+
+  /* Status indicators */
+  .status-dot {
+    @apply w-2 h-2 rounded-full;
+  }
+
+  .status-success {
+    @apply bg-secondary;
+    box-shadow: 0 0 8px hsl(var(--christmas-green));
+  }
+
+  .status-warning {
+    @apply bg-accent;
+    box-shadow: 0 0 8px hsl(var(--christmas-gold));
+  }
+
+  .status-danger {
+    @apply bg-primary;
+    box-shadow: 0 0 8px hsl(var(--christmas-red));
+  }
+
+  /* Christmas badge variants */
+  .badge-nice {
+    @apply bg-secondary/20 text-secondary border border-secondary/30;
+  }
+
+  .badge-naughty {
+    @apply bg-primary/20 text-primary border border-primary/30;
+  }
+
+  .badge-gold {
+    @apply bg-accent/20 text-accent border border-accent/30;
+  }
+}
+
+@layer utilities {
+  /* Snowfall animation container */
+  .snowfall {
+    @apply fixed inset-0 pointer-events-none overflow-hidden z-0;
+  }
+
+  .snowflake {
+    @apply absolute text-white/20 animate-snowfall;
+  }
+
+  /* Gradient text */
+  .text-gradient-christmas {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--christmas-red)) 0%,
+      hsl(var(--christmas-gold)) 50%,
+      hsl(var(--christmas-green)) 100%
+    );
+  }
+
+  /* Shimmer effect */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--foreground) / 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+}
+
+/* Keyframe animations */
+@keyframes snowfall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes countdown-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
