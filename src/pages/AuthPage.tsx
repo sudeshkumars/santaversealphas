@@ -90,7 +90,7 @@ const AuthPage = () => {
           }
         } else {
           toast({
-            title: 'Welcome to NorthStar Engine!',
+            title: 'Welcome to NorthStar Engine !',
             description: 'Your account has been created successfully.',
           });
           navigate('/');
@@ -199,6 +199,33 @@ const AuthPage = () => {
             </Button>
           </form>
           
+          {isLogin && (
+            <div className="mt-4">
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center">
+                  <span className="w-full border-t border-border" />
+                </div>
+                <div className="relative flex justify-center text-xs uppercase">
+                  <span className="bg-card px-2 text-muted-foreground">Quick Test</span>
+                </div>
+              </div>
+              <Button
+                type="button"
+                variant="outline"
+                className="w-full mt-4"
+                onClick={() => {
+                  setEmail('santaverse@alpha.com');
+                  setPassword('santa@123.');
+                }}
+              >
+                Fill Demo Credentials
+              </Button>
+              <p className="text-xs text-muted-foreground text-center mt-2">
+                santaverse@alpha.com / santa@123.
+              </p>
+            </div>
+          )}
+          
           <div className="mt-6 text-center">
             <button
               type="button"
@@ -215,7 +242,7 @@ const AuthPage = () => {
         </GlassCard>
         
         <p className="mt-6 text-center text-xs text-muted-foreground">
-          v2024.12.25 • North Pole Edition
+          v2025.12.25 • North Pole Edition
         </p>
       </div>
     </div>
