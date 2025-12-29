@@ -302,7 +302,7 @@ const SettingsPage = () => {
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Version</span>
-                  <span>2024.12.25</span>
+                  <span>2025.12.25</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Build</span>
