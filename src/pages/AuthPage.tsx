@@ -68,7 +68,7 @@ const AuthPage = () => {
         } else {
           toast({
             title: 'Welcome back!',
-            description: 'Successfully logged in to SantaVerse OS.',
+            description: 'Successfully logged in to NorthStar Engine OS.',
           });
           navigate('/');
         }
@@ -90,7 +90,7 @@ const AuthPage = () => {
           }
         } else {
           toast({
-            title: 'Welcome to SantaVerse!',
+            title: 'Welcome to NorthStar Engine!',
             description: 'Your account has been created successfully.',
           });
           navigate('/');
@@ -111,7 +111,7 @@ const AuthPage = () => {
           <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/20">
             <TreePine className="h-8 w-8 text-primary" />
           </div>
-          <h1 className="font-display text-3xl font-bold text-foreground">SantaVerse OS</h1>
+          <h1 className="font-display text-3xl font-bold text-foreground">NorthStar Engine OS</h1>
           <p className="mt-2 text-sm text-muted-foreground">
             The Operating System for Modern Christmas
           </p>
