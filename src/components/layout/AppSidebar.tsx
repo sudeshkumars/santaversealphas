@@ -46,7 +46,7 @@ export function AppSidebar() {
             <Snowflake className="h-5 w-5 text-primary" />
           </div>
           <div>
-            <h1 className="font-display text-lg font-bold text-foreground">Santa Verse</h1>
+            <h1 className="font-display text-lg font-bold text-foreground">NorthStar Engine</h1>
             <p className="text-[10px] uppercase tracking-widest text-muted-foreground">V1</p>
           </div>
         </div>
